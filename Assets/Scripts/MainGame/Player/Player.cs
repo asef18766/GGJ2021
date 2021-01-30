@@ -89,6 +89,10 @@ namespace MainGame.Player
         // Update is called once per frame
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                SwitchWeapon(6);
+            }
             ScanKey();
         }
 
