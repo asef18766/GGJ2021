@@ -16,6 +16,22 @@ public class FollowCamera : MonoBehaviour
         Vector3 destination = target.position + offset;
         Vector2 smoothPosition = Vector2.SmoothDamp(transform.position, destination,ref velocity, smoothTime);
         transform.position = new Vector3(smoothPosition.x, smoothPosition.y, transform.position.z);
+    }
+
+    public IEnumerator CameraShake(float duration, float magnitude)
+    {
+        Vector3 originalPos = transform.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+            transform.localPosition = new Vector3(originalPos.x+x, originalPos.y+y, originalPos.z);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.localPosition = originalPos;
 
     }
 }
