@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour, IPointerClickHandler
 {
-    public string name;
+    public string itemName;
     public int attack;
     public int health;
     public double speed;
     public int reputation;
     public string description;
-    public CardController controller = null;
+    public bool selected = false;
+    [SerializeField] private CardController controller;
     // Start is called before the first frame update
     void Start()
     {
-        //if (transform.position.y < 500) return;
-        Debug.Log(((RectTransform)transform).localPosition);
+        GetComponent<Text>().text = itemName;
     }
 
     // Update is called once per frame
@@ -27,6 +28,8 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        controller.ApplyCard(this);
+        selected = !selected;
+        string show = selected ? "√" : "";
+        GetComponent<Text>().text = show + itemName + show;
     }
 }
