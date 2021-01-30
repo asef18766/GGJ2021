@@ -848,6 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSet: {fileID: 11400000, guid: c620ecf8385706546bd829552ee9fba8, type: 2}
   playerProp: {fileID: 11400000, guid: 8a1a225db32d8454793cc72dba7c4d68, type: 2}
+  curPlayerProp: {fileID: 11400000, guid: 823548227b5d68a46bd81df26ecaf8a8, type: 2}
   atkKeyCode: 323
   upKeyCode: 119
   downKeyCode: 115
@@ -2423,6 +2424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38259118bdd49278f3a8ced078e3243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalOrFound: 0
   mvSpeed: 1
   maxHealth: 2
   dmg: 1
