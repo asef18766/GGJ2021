@@ -10,10 +10,14 @@ namespace MainGame.Weapon
         [SerializeField] private float cdTime = 1;
         private bool _coolDown = true;
         private BoxCollider2D _boxCollider2D;
+        private Animator _animator;
         private FollowCamera _followCamera;
+        private static readonly int Fire = Animator.StringToHash("Fire");
+
         private void Start()
         {
             _boxCollider2D = GetComponent<BoxCollider2D>();
+            _animator = GetComponent<Animator>();
             _boxCollider2D.enabled = false;
             _followCamera = FindObjectOfType<FollowCamera>();
         }
@@ -36,6 +40,7 @@ namespace MainGame.Weapon
             
             StartCoroutine(DoAttack(pos, dir));
             print("attack!!");
+            _animator.SetTrigger(Fire);
             _followCamera.StartCoroutine(_followCamera.CameraShake(0.1f, 0.1f));
         }
 
