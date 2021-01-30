@@ -10,5 +10,6 @@ namespace MainGame.Player
         public int atkRange;
         public int maxHealth;
         public int mvSpeed;
+        public int reputation;
     }
 }
