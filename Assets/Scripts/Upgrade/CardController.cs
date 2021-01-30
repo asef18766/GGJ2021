@@ -32,7 +32,7 @@ public class CardController : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             cards[i] = cardChoices[randomNumbers[i]];
-            ((RectTransform)cards[i].transform).localPosition = new Vector3(-280 + i * 280, 0, 0);
+            ((RectTransform)cards[i].transform).localPosition = new Vector3(-500 + i * 500, 0, 0);
         }
         sureButton.interactable = true;
     }
@@ -52,7 +52,7 @@ public class CardController : MonoBehaviour
             playerProp.reputation += card.reputation * (card.selected ? -1 : 1);
             card.selected = false;
 
-            ((RectTransform)card.transform).localPosition = new Vector3(-1000, 0, 0);
+            ((RectTransform)card.transform).localPosition = new Vector3(-1500, 0, 0);
         }
 
         sureButton.interactable = false;
