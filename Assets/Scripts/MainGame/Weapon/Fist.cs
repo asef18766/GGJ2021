@@ -10,10 +10,12 @@ namespace MainGame.Weapon
         [SerializeField] private float cdTime = 1;
         private bool _coolDown = true;
         private BoxCollider2D _boxCollider2D;
+        private FollowCamera _followCamera;
         private void Start()
         {
             _boxCollider2D = GetComponent<BoxCollider2D>();
             _boxCollider2D.enabled = false;
+            _followCamera = FindObjectOfType<FollowCamera>();
         }
 
         private IEnumerator DoAttack(Vector2 pos, Vector2 dir)
@@ -23,7 +25,6 @@ namespace MainGame.Weapon
             _boxCollider2D.enabled = true;
             yield return new WaitForSeconds(0.1f);
             _boxCollider2D.enabled = false;
-
             yield return new WaitForSeconds(cdTime);
             _coolDown = true;
         }
@@ -35,6 +36,7 @@ namespace MainGame.Weapon
             
             StartCoroutine(DoAttack(pos, dir));
             print("attack!!");
+            _followCamera.StartCoroutine(_followCamera.CameraShake(0.1f, 0.1f));
         }
 
         private void OnTriggerEnter2D(Collider2D other)

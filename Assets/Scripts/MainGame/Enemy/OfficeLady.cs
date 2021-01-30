@@ -4,18 +4,22 @@ using UnityEngine;
 
 namespace MainGame.Enemy
 {
-    public class OfficeLady : MonoBehaviour, IEnemy
+    public class OfficeLady : MonoBehaviour, IEnemy, IHideable
     {
         private Player.Player _player;
         private Rigidbody2D _rb;
         private int _curHealth;
         private bool _coolDown = true;
+        /*
+         * normal: true
+         * found: false
+         */
+        [SerializeField] private bool normalOrFound;
         [SerializeField] private float mvSpeed = 1;
         [SerializeField] private int maxHealth = 2;
         [SerializeField] private int dmg = 1;
         [SerializeField] private float cd = 0.8f;
         [SerializeField] private DamageZone dmgZone;
-        
         private void Start()
         {
             _player = GameObject.Find("Player").GetComponent<Player.Player>();
@@ -78,6 +82,22 @@ namespace MainGame.Enemy
             if (!other.CompareTag("Player")) return;
             print("found player");
             Attack();
+        }
+
+        public void SwitchLost()
+        {
+            if (normalOrFound)
+            {
+                gameObject.SetActive(!gameObject.activeSelf);
+            }
+        }
+
+        public void SwitchFound()
+        {
+            if (normalOrFound == false)
+            {
+                gameObject.SetActive(!gameObject.activeSelf);
+            }
         }
     }
 }
