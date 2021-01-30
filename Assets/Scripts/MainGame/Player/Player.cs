@@ -99,5 +99,10 @@ namespace MainGame.Player
             _weapon = Instantiate(_weapon, transform);
             _curWeapon = _weapon.GetComponentInChildren<IWeapon>();
         }
+
+        public PlayerProp GetCurPlayerProp()
+        {
+            return curPlayerProp;
+        }
     }
 }
