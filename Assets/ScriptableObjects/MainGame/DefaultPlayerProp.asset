@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa2690ff47342dbb732b6aee7cdfa0a, type: 3}
   m_Name: DefaultPlayerProp
   m_EditorClassIdentifier: 
-  atk: 110
+  atk: 10
   atkSpeed: 10
   atkRange: 10
-  maxHealth: 70
-  mvSpeed: 6
-  reputation: 230
+  maxHealth: 10
+  mvSpeed: 3
+  reputation: 0
