@@ -33,7 +33,11 @@ public class ModeControl : MonoBehaviour
     {
         foreach(var observer in modeObservers)
         {
-            observer.OnNotify(currentMode);
+            if(observer!=null) //背Destroy掉沒解註冊的Observer就不理它
+            {
+                observer.OnNotify(currentMode);
+            }
+
         }
     }
     /*************************************/
@@ -71,7 +75,7 @@ public class ModeControl : MonoBehaviour
 
         if (Input.GetKeyDown(lostModeKeyCode))
         {
-            Debug.Log($"Lost Mode Activated");
+            //Debug.Log($"Lost Mode Activated");
             currentMode = Modes.Lost;
             StartCoroutine(Timer(modeLastingTime, switchModeCDTime));
            
@@ -79,7 +83,7 @@ public class ModeControl : MonoBehaviour
         }
         else if (Input.GetKeyDown(foundModeKeyCode))
         {
-            Debug.Log($"Found Mode Activated");
+            //Debug.Log($"Found Mode Activated");
             currentMode = Modes.Found;
             StartCoroutine(Timer(modeLastingTime, switchModeCDTime));
             Notify();  //Send Mode Update to Observers
@@ -93,13 +97,13 @@ public class ModeControl : MonoBehaviour
 
         yield return new WaitForSeconds(lastingTime);
 
-        Debug.Log($"Mode Switched Backed to Normal");
+        //Debug.Log($"Mode Switched Backed to Normal");
         currentMode = Modes.Normal;
         Notify();
 
         yield return new WaitForSeconds(CDTime);
 
-        Debug.Log($"CD Time End, Can Switch Mode");
+        //Debug.Log($"CD Time End, Can Switch Mode");
         inCD = false;
 
     }

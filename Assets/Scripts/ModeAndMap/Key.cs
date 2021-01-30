@@ -11,6 +11,8 @@ public class Key : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             targetDoor.Open();
+            ModeObserver m = this.gameObject.GetComponent<ModeObserver>();
+            ModeControl.Instance.modeObservers.Remove(m);
             Destroy(this.gameObject);
         }
     }
