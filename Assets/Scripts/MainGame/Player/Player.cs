@@ -6,39 +6,53 @@ namespace MainGame.Player
 {
     public class Player : MonoBehaviour
     {
-        private int _curHealth;
         private IWeapon _curWeapon;
         private Rigidbody2D _rigidbody;
+        private Camera _camera;
+        private GameObject _weapon;
+
         [SerializeField] private WeaponSet weaponSet;
+        
         [SerializeField] private PlayerProp playerProp;
+        [SerializeField] private PlayerProp curPlayerProp;
+        
         [SerializeField] private KeyCode atkKeyCode = KeyCode.Mouse0;
         [SerializeField] private KeyCode upKeyCode = KeyCode.W;
         [SerializeField] private KeyCode downKeyCode = KeyCode.S;
         [SerializeField] private KeyCode leftKeyCode = KeyCode.A;
         [SerializeField] private KeyCode rightKeyCode = KeyCode.D;
-
+        
         // Start is called before the first frame update
         private void Start()
         {
-            var weapon = weaponSet.GetWeapon(0);
-            _curWeapon = Instantiate(weapon, transform).GetComponentInChildren<IWeapon>();
+            _camera = Camera.main;
+            _weapon = weaponSet.GetWeapon(0);
+            _weapon = Instantiate(_weapon, transform);
+            _curWeapon = _weapon.GetComponentInChildren<IWeapon>();
             if (_curWeapon == null)
                 print("cur weapon is null!!");
-
-            _curHealth = playerProp.maxHealth;
+            
+            curPlayerProp.Copy(playerProp);
+            
             _rigidbody = GetComponent<Rigidbody2D>();
         }
-
+        
         private void ScanKey()
         {
+            var mousePos = Input.mousePosition;
+            mousePos.z = _camera.nearClipPlane;
+            var position = transform.position;
+                
+            var atkDir =  _camera.ScreenToWorldPoint(mousePos) - position;
+            var rotate = Vector2.Angle(Vector2.right, atkDir);
+            if (atkDir.y < 0)
+                rotate = -rotate;
+            _weapon.transform.rotation = Quaternion.identity;
+            _weapon.transform.Rotate(0,0,rotate);
+            
             if (Input.GetKey(atkKeyCode))
             {
                 //do attack
-                var mousePos = Input.mousePosition;
-                mousePos.z = Camera.main.nearClipPlane;
-                var position = transform.position;
-                
-                var atkDir = position - Camera.main.ScreenToWorldPoint(mousePos);
                 atkDir = atkDir.normalized;
                 _curWeapon.Attack(position, atkDir);
             }
@@ -64,8 +78,8 @@ namespace MainGame.Player
         private IEnumerator _hurt(int dmg)
         {
             print("player hurt!!");
-            _curHealth -= dmg;
-            if (_curHealth <= 0)
+            curPlayerProp.maxHealth -= dmg;
+            if (curPlayerProp.maxHealth <= 0)
             {
                 _die();
             }
@@ -76,6 +90,14 @@ namespace MainGame.Player
         private void Update()
         {
             ScanKey();
+        }
+
+        public void SwitchWeapon(int idx)
+        {
+            Destroy(_weapon);
+            _weapon = weaponSet.GetWeapon(idx);
+            _weapon = Instantiate(_weapon, transform);
+            _curWeapon = _weapon.GetComponentInChildren<IWeapon>();
         }
     }
 }
