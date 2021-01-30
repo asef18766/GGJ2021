@@ -14,7 +14,7 @@ public class ModeControl : MonoBehaviour
     public static ModeControl Instance { get; set; }
 
 
-    [SerializeField] private Modes currentMode = Modes.Normal;
+    [SerializeField] public Modes currentMode = Modes.Normal;
 
     [SerializeField] private KeyCode lostModeKeyCode = KeyCode.Q;
     [SerializeField] private KeyCode foundModeKeyCode = KeyCode.E;
