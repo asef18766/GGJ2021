@@ -6,6 +6,6 @@ public class Descript : MonoBehaviour
 {
     public void ChangeSceneToGame()
     {
-        SceneController.Instance.ChangeScene("ModeAndMapTest");
+        SceneController.Instance.ChangeScene("Level1");
     }
 }
