@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 1150954461741078082, guid: 9a75a8294d2a19841aee51faede4ce2e, type: 3}
-  cdTime: 0.5
+  cdTime: 0.2
 --- !u!95 &4670797419065968945
 Animator:
   serializedVersion: 3
