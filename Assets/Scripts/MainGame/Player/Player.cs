@@ -11,6 +11,13 @@ namespace MainGame.Player
         private Camera _camera;
         private GameObject _weapon;
 
+        // 動畫用
+        public Animator _animator;
+        bool IsMoving = false;
+        int AniCounter = 0;
+        public SpriteRenderer aniSpriteRenderer;
+        public MainGameCanvas mainGameCanvas;
+
         [SerializeField] private WeaponSet weaponSet;
         
         [SerializeField] private PlayerProp playerProp;
@@ -35,6 +42,7 @@ namespace MainGame.Player
             curPlayerProp.Copy(playerProp);
             
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animator.SetTrigger("Idle");
         }
         
         private void ScanKey()
@@ -56,28 +64,67 @@ namespace MainGame.Player
                 atkDir = atkDir.normalized;
                 _curWeapon.Attack(position, atkDir);
             }
-            
+
+
             // move
+            IsMoving = false;
+
             var mvVec = new Vector2();
             if (Input.GetKey(upKeyCode))
+            {
                 mvVec += Vector2.up;
+                IsMoving = true;
+            }  
             if (Input.GetKey(downKeyCode))
+            {
                 mvVec += Vector2.down;
+                IsMoving = true;
+            }
             if (Input.GetKey(leftKeyCode))
+            {
                 mvVec += Vector2.left;
+                IsMoving = true;
+            }
             if (Input.GetKey(rightKeyCode))
+            {
                 mvVec += Vector2.right;
+                IsMoving = true;
+            }
+
+            // 做了個醜醜的Trigger一次狀態
+            if (IsMoving==true && AniCounter==0)
+            {
+                _animator.SetTrigger("Walk");
+                AniCounter = 1;
+            }
+            if( IsMoving ==false && AniCounter == 1)
+            {
+                _animator.SetTrigger("Idle");
+                AniCounter = 0;
+            }
+
+            //左右翻面
+            if(atkDir.x > 0)
+            {
+                aniSpriteRenderer.flipX = false;
+            }
+            else
+            {
+                aniSpriteRenderer.flipX = true;
+            }
             
+
             _rigidbody.AddForce(mvVec.normalized * playerProp.mvSpeed);
         }
 
         private void _die()
         {
+            mainGameCanvas.PlayerDiedAnimation();
             print("player dead");
         }
         private IEnumerator _hurt(int dmg)
         {
-            print("player hurt!!");
+            //print("player hurt!!");
             curPlayerProp.maxHealth -= dmg;
             if (curPlayerProp.maxHealth <= 0)
             {
@@ -108,5 +155,7 @@ namespace MainGame.Player
         {
             return curPlayerProp;
         }
+
+
     }
 }
