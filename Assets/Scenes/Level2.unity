@@ -830,17 +830,17 @@ PrefabInstance:
     - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: normalOrFound
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanShow
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanCollide
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4fcf9c2498f644db3b5cd42149098c, type: 3}
@@ -1661,17 +1661,17 @@ PrefabInstance:
     - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: normalOrFound
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanShow
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanCollide
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4fcf9c2498f644db3b5cd42149098c, type: 3}
@@ -3936,17 +3936,17 @@ PrefabInstance:
     - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: normalOrFound
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanShow
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanCollide
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4fcf9c2498f644db3b5cd42149098c, type: 3}
@@ -3976,7 +3976,17 @@ PrefabInstance:
     - target: {fileID: 8572959418572002865, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
         type: 3}
       propertyPath: normalOrFound
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572959418572002870, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
+        type: 3}
+      propertyPath: modeConditions.Array.data[0].CanShow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572959418572002870, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
+        type: 3}
+      propertyPath: modeConditions.Array.data[0].CanCollide
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8572959418572002874, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
         type: 3}
@@ -4515,17 +4525,17 @@ PrefabInstance:
     - target: {fileID: 5579285578180372095, guid: 70780c47ffdd9f14db2239dd3bbc763e,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanShow
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5579285578180372095, guid: 70780c47ffdd9f14db2239dd3bbc763e,
         type: 3}
       propertyPath: modeConditions.Array.data[1].CanShow
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5579285578180372095, guid: 70780c47ffdd9f14db2239dd3bbc763e,
         type: 3}
       propertyPath: modeConditions.Array.data[2].CanShow
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5579285578180372095, guid: 70780c47ffdd9f14db2239dd3bbc763e,
         type: 3}
@@ -4545,17 +4555,17 @@ PrefabInstance:
     - target: {fileID: 5579285578180372095, guid: 70780c47ffdd9f14db2239dd3bbc763e,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanCollide
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5579285578180372095, guid: 70780c47ffdd9f14db2239dd3bbc763e,
         type: 3}
       propertyPath: modeConditions.Array.data[1].CanCollide
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5579285578180372095, guid: 70780c47ffdd9f14db2239dd3bbc763e,
         type: 3}
       propertyPath: modeConditions.Array.data[2].CanCollide
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70780c47ffdd9f14db2239dd3bbc763e, type: 3}
@@ -43773,17 +43783,17 @@ PrefabInstance:
     - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: normalOrFound
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanShow
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567214, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
       propertyPath: modeConditions.Array.data[0].CanCollide
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4fcf9c2498f644db3b5cd42149098c, type: 3}
@@ -43882,7 +43892,17 @@ PrefabInstance:
     - target: {fileID: 8572959418572002865, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
         type: 3}
       propertyPath: normalOrFound
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572959418572002870, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
+        type: 3}
+      propertyPath: modeConditions.Array.data[0].CanShow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572959418572002870, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
+        type: 3}
+      propertyPath: modeConditions.Array.data[0].CanCollide
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8572959418572002874, guid: 5cd1985ea20a5b544aec9ff1c9d3fd34,
         type: 3}
