@@ -56,6 +56,6 @@ public class CardController : MonoBehaviour
         }
 
         sureButton.interactable = false;
-        GameObject.Find("SceneController").GetComponent<SceneController>().ChangeScene(1);
+        GameObject.Find("SceneController").GetComponent<SceneController>().ChangeScene("ModeAndMapTest");
     }
 }

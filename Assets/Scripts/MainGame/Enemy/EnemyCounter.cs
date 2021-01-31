@@ -43,7 +43,7 @@ public class EnemyCounter : MonoBehaviour
         if(allEnemies.Count==0)
         {
             Debug.Log("關卡結束");
-            SceneController.Instance.ChangeScene(2);
+            SceneController.Instance.ChangeScene("upgrade");
         }
  
     }

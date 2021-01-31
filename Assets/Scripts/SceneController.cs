@@ -6,17 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController Instance;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    string prevScene="";
 
     void Awake()
     {
@@ -31,8 +22,11 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void ChangeScene(int index)
+    public void ChangeScene(string sceneName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(index);
+        prevScene = sceneName;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
+
+
 }

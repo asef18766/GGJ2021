@@ -22,9 +22,8 @@ public class EndingController : MonoBehaviour
         ((RectTransform)ending.transform).localPosition = new Vector3(0, 0, 0);
     }
 
-    // Update is called once per frame
-    void Update()
+   public void ChangeSceneBackToMenu()
     {
-
+        SceneController.Instance.ChangeScene("menu");
     }
 }

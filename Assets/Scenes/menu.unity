@@ -466,13 +466,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1255868362}
         m_MethodName: ChangeScene
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: upgrade
+          m_StringArgument: Descript
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &744452609
@@ -615,7 +615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c234397f3eb7f41dbac9ef1f30556c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Instance: {fileID: 0}
 --- !u!4 &1255868363
 Transform:
   m_ObjectHideFlags: 0
