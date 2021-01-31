@@ -45,6 +45,15 @@ public class EnemyCounter : MonoBehaviour
             Debug.Log("關卡結束");
             SceneController.Instance.ChangeScene("upgrade");
         }
- 
+    }
+
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            SceneController.Instance.ChangeScene("upgrade");
+        }
+
     }
 }
