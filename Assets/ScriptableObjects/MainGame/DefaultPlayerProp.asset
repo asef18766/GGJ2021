@@ -16,5 +16,5 @@ MonoBehaviour:
   atkSpeed: 10
   atkRange: 10
   maxHealth: 20
-  mvSpeed: 3
+  mvSpeed: 25
   reputation: 0

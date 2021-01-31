@@ -829,6 +829,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
+      propertyPath: mvSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
+        type: 3}
       propertyPath: normalOrFound
       value: 0
       objectReference: {fileID: 0}
@@ -1179,6 +1184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198890515706951728, guid: dae325e4077079b4897e5205b6d0319a,
+        type: 3}
+      propertyPath: mvSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dae325e4077079b4897e5205b6d0319a, type: 3}
@@ -1902,6 +1912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
+        type: 3}
+      propertyPath: mvSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}
@@ -4097,6 +4112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198890515706951728, guid: dae325e4077079b4897e5205b6d0319a,
+        type: 3}
+      propertyPath: mvSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dae325e4077079b4897e5205b6d0319a, type: 3}
@@ -16696,6 +16716,11 @@ PrefabInstance:
         type: 3}
       propertyPath: modeConditions.Array.data[2].CanCollide
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198890515706951728, guid: dae325e4077079b4897e5205b6d0319a,
+        type: 3}
+      propertyPath: mvSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dae325e4077079b4897e5205b6d0319a, type: 3}
@@ -32498,6 +32523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
+        type: 3}
+      propertyPath: mvSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3734717246709567213, guid: 0a4fcf9c2498f644db3b5cd42149098c,
         type: 3}

@@ -138,19 +138,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3734717246294247873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755579533997027679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2da703faf84c0bbdf0d295c6f2cfb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
 --- !u!1 &3734717246709567212
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,12 +314,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalOrFound: 1
-  mvSpeed: 4
+  mvSpeed: 20
   maxHealth: 10
   dmg: 2
   cd: 0.8
   dmgZone: {fileID: 3734717246294247873}
   detectRange: 5
+--- !u!114 &3734717246294247873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755579533997027679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2da703faf84c0bbdf0d295c6f2cfb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1001 &3734717246294247902
 PrefabInstance:
   m_ObjectHideFlags: 0

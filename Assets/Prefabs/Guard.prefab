@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalOrFound: 0
-  mvSpeed: 4
+  mvSpeed: 20
   maxHealth: 15
   cd: 0.8
   detectRange: 6

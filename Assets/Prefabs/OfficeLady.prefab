@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalOrFound: 1
-  mvSpeed: 4
+  mvSpeed: 20
   maxHealth: 2
   dmg: 1
   cd: 0.8

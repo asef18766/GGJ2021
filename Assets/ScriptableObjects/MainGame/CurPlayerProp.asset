@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa2690ff47342dbb732b6aee7cdfa0a, type: 3}
   m_Name: CurPlayerProp
   m_EditorClassIdentifier: 
-  atk: 0
-  atkSpeed: 0
-  atkRange: 0
-  maxHealth: 0
-  mvSpeed: 0
+  atk: 10
+  atkSpeed: 10
+  atkRange: 10
+  maxHealth: 19
+  mvSpeed: 30
   reputation: 0
