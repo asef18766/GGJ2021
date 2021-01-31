@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slot:
   - {fileID: 6200431943360744660, guid: aaf7c8893bd6aa8428da587390480b11, type: 3}
-  - {fileID: 0}
+  - {fileID: 8475528475486721250, guid: 3343dc7c1f89cae4b8a0ac31ed54df23, type: 3}
+  - {fileID: 9070786942047852172, guid: e6060a61fb33e784d8631444c0618d29, type: 3}
+  - {fileID: 7689576091819432869, guid: 2a5fdbcd9d25e5b49bd2ccd56bbdf258, type: 3}
+  - {fileID: 8132228480998882861, guid: 7fc790cf7dd08df4e94777c5d49d33b9, type: 3}
+  - {fileID: 5352267956028693465, guid: c2523be8cbaa4574c941de03d324952e, type: 3}
+  - {fileID: 4670797418085723294, guid: ee164308128412741ae48c18c2e400ac, type: 3}

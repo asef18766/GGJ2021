@@ -4,22 +4,22 @@ using UnityEngine;
 
 namespace MainGame.Weapon
 {
-    public class Fist : MonoBehaviour, IWeapon
+    public class Stand : MonoBehaviour, IWeapon
     {
-        [SerializeField] private int dmg = 1;
+        [SerializeField] private int dmg = 10;
         [SerializeField] private float cdTime = 1;
         private bool _coolDown = true;
         private BoxCollider2D _boxCollider2D;
-        private Animator _animator;
         private FollowCamera _followCamera;
+        private Animator _animator;
         private static readonly int Fire = Animator.StringToHash("Fire");
 
         private void Start()
         {
             _boxCollider2D = GetComponent<BoxCollider2D>();
-            _animator = GetComponent<Animator>();
             _boxCollider2D.enabled = false;
             _followCamera = FindObjectOfType<FollowCamera>();
+            _animator = GetComponent<Animator>();
         }
 
         private IEnumerator DoAttack(Vector2 pos, Vector2 dir)
@@ -39,8 +39,8 @@ namespace MainGame.Weapon
                 return;
             
             StartCoroutine(DoAttack(pos, dir));
-            print("attack!!");
             _animator.SetTrigger(Fire);
+            print("attack!!");
             _followCamera.StartCoroutine(_followCamera.CameraShake(0.1f, 0.1f));
         }
 

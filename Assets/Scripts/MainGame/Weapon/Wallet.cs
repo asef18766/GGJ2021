@@ -1,34 +1,34 @@
 ﻿using System.Collections;
-using MainGame.Enemy;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 namespace MainGame.Weapon
 {
-    public class Fist : MonoBehaviour, IWeapon
+    public class Wallet : MonoBehaviour, IWeapon
     {
-        [SerializeField] private int dmg = 1;
-        [SerializeField] private float cdTime = 1;
-        private bool _coolDown = true;
-        private BoxCollider2D _boxCollider2D;
-        private Animator _animator;
-        private FollowCamera _followCamera;
-        private static readonly int Fire = Animator.StringToHash("Fire");
+        [SerializeField] private List<GameObject> ammos;
 
+        [SerializeField] private float cdTime = 0.5f;
+        private bool _coolDown = true;
+        private FollowCamera _followCamera;
+        private Animator _animator;
+        private static readonly int Fire = Animator.StringToHash("Fire");
+        private Random _random;
         private void Start()
         {
-            _boxCollider2D = GetComponent<BoxCollider2D>();
-            _animator = GetComponent<Animator>();
-            _boxCollider2D.enabled = false;
             _followCamera = FindObjectOfType<FollowCamera>();
+            _animator = GetComponent<Animator>();
+            _random = new Random();
+            _random.InitState();
         }
 
         private IEnumerator DoAttack(Vector2 pos, Vector2 dir)
         {
             _coolDown = false;
-
-            _boxCollider2D.enabled = true;
-            yield return new WaitForSeconds(0.1f);
-            _boxCollider2D.enabled = false;
+            var ammo = ammos[_random.NextInt(0, ammos.Count)];
+            var projectile = Instantiate(ammo, pos, Quaternion.identity).GetComponent<Projectile>();
+            projectile.SetDir(dir);
             yield return new WaitForSeconds(cdTime);
             _coolDown = true;
         }
@@ -39,18 +39,9 @@ namespace MainGame.Weapon
                 return;
             
             StartCoroutine(DoAttack(pos, dir));
-            print("attack!!");
             _animator.SetTrigger(Fire);
+            print("attack!!");
             _followCamera.StartCoroutine(_followCamera.CameraShake(0.1f, 0.1f));
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (!other.CompareTag("Enemy")) return;
-            
-            print("hit");
-            var enemy = other.GetComponent<IEnemy>();
-            enemy.Hurt(dmg);
         }
     }
 }
