@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  dmg: 1
+  dmg: 4
+  target: Enemy
 --- !u!50 &1325092777400786382
 Rigidbody2D:
   serializedVersion: 4

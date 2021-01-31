@@ -49,14 +49,14 @@ namespace MainGame.Enemy
         public void Attack()
         {
             if (!_coolDown) return;
-           // print("enemy attack!!");
+            // print("enemy attack!!");
             var position = transform.position;
             StartCoroutine(DoAttack(position, _player.transform.position - position));
         }
 
         private void _die()
         {
-           // print("enemy die");
+            // print("enemy die");
             EnemyCounter.Instance.RemoveEnemy(this);
             Destroy(gameObject);
         }
@@ -73,7 +73,10 @@ namespace MainGame.Enemy
         {
             Vector3 dir = _player.transform.position - transform.position;
             if (dir.sqrMagnitude <= detectRange * detectRange)
+            {
+                if (dir.sqrMagnitude < 10) Attack();
                 _rb.AddForce(dir.normalized * mvSpeed * (dir.sqrMagnitude < 9 ? -1 : 1));
+            }
         }
 
         private void Update()
@@ -83,9 +86,6 @@ namespace MainGame.Enemy
 
         private void OnTriggerStay2D(Collider2D other)
         {
-            if (!other.CompareTag("Player")) return;
-            //print("found player");
-            Attack();
         }
 
         public void SwitchLost()
