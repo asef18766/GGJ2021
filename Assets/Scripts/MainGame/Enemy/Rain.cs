@@ -33,7 +33,7 @@ namespace MainGame.Enemy
         public IEnumerator wither()
         {
             gameObject.SetActive(true);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
             _die();
         }
 
