@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using MainGame.Player;
 
 public class SceneController : MonoBehaviour
 {
     public static SceneController Instance;
     public static int level = 1;
     string prevScene="";
+    [SerializeField] private PlayerProp playerProp;
+    [SerializeField] private PlayerProp curPlayerProp;
 
     void Awake()
     {
@@ -16,6 +19,7 @@ public class SceneController : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this);
+            curPlayerProp.Copy(playerProp);
         }
         else
         {

@@ -39,7 +39,7 @@ namespace MainGame.Player
             if (_curWeapon == null)
                 print("cur weapon is null!!");
             
-            curPlayerProp.Copy(playerProp);
+            curPlayerProp.curHealth = curPlayerProp.maxHealth;
             
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator.SetTrigger("Idle");
@@ -125,8 +125,8 @@ namespace MainGame.Player
         private IEnumerator _hurt(int dmg)
         {
             //print("player hurt!!");
-            curPlayerProp.maxHealth -= dmg;
-            if (curPlayerProp.maxHealth <= 0)
+            curPlayerProp.curHealth -= dmg;
+            if (curPlayerProp.curHealth <= 0)
             {
                 _die();
             }

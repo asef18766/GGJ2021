@@ -9,6 +9,7 @@ namespace MainGame.Player
         public int atkSpeed;
         public int atkRange;
         public int maxHealth;
+        public int curHealth;
         public int mvSpeed;
         public int reputation;
         public void Copy(PlayerProp other)
@@ -17,7 +18,9 @@ namespace MainGame.Player
             atkSpeed = other.atkSpeed;
             atkRange = other.atkRange;
             maxHealth = other.maxHealth;
+            curHealth = other.curHealth;
             mvSpeed = other.mvSpeed;
+            reputation = other.reputation;
         }
     }
 }
