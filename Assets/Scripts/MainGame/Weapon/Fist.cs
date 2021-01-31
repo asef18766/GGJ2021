@@ -39,7 +39,7 @@ namespace MainGame.Weapon
                 return;
             
             StartCoroutine(DoAttack(pos, dir));
-            print("attack!!");
+            //print("attack!!");
             _animator.SetTrigger(Fire);
             _followCamera.StartCoroutine(_followCamera.CameraShake(0.1f, 0.1f));
         }

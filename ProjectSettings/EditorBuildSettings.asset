@@ -11,13 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ModeAndMapTest.unity
     guid: 9b888575b898b194d80f96cbcf550438
+  - enabled: 1
+    path: Assets/Scenes/upgrade.unity
+    guid: 797193192564a5941a28ecef503eab19
   - enabled: 0
     path: Assets/Scenes/mainGame.unity
     guid: 9da4748ab8328ee44bc20d82d400b3b0
   - enabled: 1
-    path: Assets/Scenes/upgrade.unity
-    guid: 797193192564a5941a28ecef503eab19
-  - enabled: 1
     path: Assets/Scenes/ending.unity
     guid: a2985b55b12284be7ac99ac7d78c781a
+  - enabled: 1
+    path: Assets/Scenes/Descript.unity
+    guid: 60ec26295f5ec90459946011c09a7a2a
   m_configObjects: {}

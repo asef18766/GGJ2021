@@ -56,14 +56,15 @@ namespace MainGame.Enemy
         public void Attack()
         {
             if (!_coolDown) return;
-            print("enemy attack!!");
+            //print("enemy attack!!");
             var position = transform.position;
             StartCoroutine(DoAttack(position, _player.transform.position - position));
         }
 
         private void _die()
         {
-            print("enemy die");
+            //print("enemy die");
+            EnemyCounter.Instance.RemoveEnemy(this);
             Destroy(gameObject);
         }
         public void Hurt(int dmg)
@@ -90,7 +91,7 @@ namespace MainGame.Enemy
         private void OnTriggerStay2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;
-            print("found player");
+            //print("found player");
             Attack();
         }
 
@@ -109,5 +110,11 @@ namespace MainGame.Enemy
                 gameObject.SetActive(!gameObject.activeSelf);
             }
         }
+
+        private void OnEnable()
+        {
+            _coolDown = true; // 刷新HITBOX避免開不了
+        }
+
     }
 }
