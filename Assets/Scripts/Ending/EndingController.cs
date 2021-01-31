@@ -7,22 +7,24 @@ public class EndingController : MonoBehaviour
 {
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject[] endings = new GameObject[3];
+    [SerializeField] private GameObject[] images = new GameObject[3];
     [SerializeField] private PlayerProp playerProp;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject ending;
-        if (playerProp.reputation > 300)
-            ending = endings[0];
-        else if (playerProp.reputation > 100)
-            ending = endings[1];
+        int index;
+        if (playerProp.reputation < -100)
+            index = 0;
+        else if (playerProp.reputation < 100)
+            index = 1;
         else
-            ending = endings[2];
+            index = 2;
 
-        ((RectTransform)ending.transform).localPosition = new Vector3(0, 0, 0);
+        ((RectTransform)endings[index].transform).localPosition = new Vector3(120, -580, 0);
+        ((RectTransform)images[index].transform).localPosition = new Vector3(0, 0, 0);
     }
 
-   public void ChangeSceneBackToMenu()
+    public void ChangeSceneBackToMenu()
     {
         SceneController.Instance.ChangeScene("menu");
     }
