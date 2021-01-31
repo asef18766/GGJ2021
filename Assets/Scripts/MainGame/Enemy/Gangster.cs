@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MainGame.Enemy
 {
-    public class OfficeLady : MonoBehaviour, IEnemy, IHideable
+    public class Gangster : MonoBehaviour, IEnemy, IHideable
     {
         private Player.Player _player;
         private Rigidbody2D _rb;
@@ -57,7 +57,6 @@ namespace MainGame.Enemy
         private void _die()
         {
             print("enemy die");
-            EnemyCounter.Instance.RemoveEnemy(this);
             Destroy(gameObject);
         }
         public void Hurt(int dmg)
@@ -84,7 +83,7 @@ namespace MainGame.Enemy
         private void OnTriggerStay2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;
-            //print("found player");
+            print("found player");
             Attack();
         }
 
@@ -103,10 +102,5 @@ namespace MainGame.Enemy
                 gameObject.SetActive(!gameObject.activeSelf);
             }
         }
-        private void OnEnable()
-        {
-            _coolDown = true; // 刷新HITBOX避免開不了
-        }
-
     }
 }

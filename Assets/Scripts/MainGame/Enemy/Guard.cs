@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using MainGame.Weapon;
 
 namespace MainGame.Enemy
 {
-    public class OfficeLady : MonoBehaviour, IEnemy, IHideable
+    public class Guard : MonoBehaviour, IEnemy, IHideable
     {
         private Player.Player _player;
         private Rigidbody2D _rb;
@@ -17,31 +18,22 @@ namespace MainGame.Enemy
         [SerializeField] private bool normalOrFound;
         [SerializeField] private float mvSpeed = 1;
         [SerializeField] private int maxHealth = 2;
-        [SerializeField] private int dmg = 1;
         [SerializeField] private float cd = 0.8f;
-        [SerializeField] private DamageZone dmgZone;
         [SerializeField] private float detectRange = 10f;
+        [SerializeField] private GameObject ammo;
         private void Start()
         {
             _player = GameObject.Find("Player").GetComponent<Player.Player>();
             _rb = GetComponent<Rigidbody2D>();
             _curHealth = maxHealth;
-            dmgZone.damage = dmg;
-            dmgZone.gameObject.SetActive(false);
         }
 
         private IEnumerator DoAttack(Vector2 pos, Vector2 dir)
         {
             _coolDown = false;
 
-            dmgZone.gameObject.SetActive(true);
-
-            dmgZone.transform.parent.rotation = Quaternion.identity;
-            var angle = Mathf.Acos(dir.normalized.x) / (2 * Math.PI) * 360 * ((dir.y < 0) ? -1 : 1);
-            dmgZone.transform.parent.Rotate(0, 0, (float)angle);
-
-            yield return new WaitForSeconds(0.1f);
-            dmgZone.gameObject.SetActive(false);
+            var projectile = Instantiate(ammo, pos, Quaternion.identity).GetComponent<Projectile>();
+            projectile.SetDir(dir);
 
             yield return new WaitForSeconds(cd);
             _coolDown = true;
@@ -57,7 +49,6 @@ namespace MainGame.Enemy
         private void _die()
         {
             print("enemy die");
-            EnemyCounter.Instance.RemoveEnemy(this);
             Destroy(gameObject);
         }
         public void Hurt(int dmg)
@@ -73,7 +64,10 @@ namespace MainGame.Enemy
         {
             Vector3 dir = _player.transform.position - transform.position;
             if (dir.sqrMagnitude <= detectRange * detectRange)
-                _rb.AddForce(dir.normalized * mvSpeed);
+            {
+                _rb.AddForce(dir.normalized * -mvSpeed);
+                Attack();
+            }
         }
 
         private void Update()
@@ -84,8 +78,7 @@ namespace MainGame.Enemy
         private void OnTriggerStay2D(Collider2D other)
         {
             if (!other.CompareTag("Player")) return;
-            //print("found player");
-            Attack();
+            print("found player");
         }
 
         public void SwitchLost()
@@ -103,10 +96,5 @@ namespace MainGame.Enemy
                 gameObject.SetActive(!gameObject.activeSelf);
             }
         }
-        private void OnEnable()
-        {
-            _coolDown = true; // 刷新HITBOX避免開不了
-        }
-
     }
 }
