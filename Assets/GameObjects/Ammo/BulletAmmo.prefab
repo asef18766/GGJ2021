@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  dmg: 3
+  dmg: 2
   target: Player
 --- !u!50 &23589247953032259
 Rigidbody2D:
