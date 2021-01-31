@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MainGame.Enemy
 {
-    public class OfficeLady : MonoBehaviour, IEnemy, IHideable
+    public class Gangster : MonoBehaviour, IEnemy, IHideable
     {
         private Player.Player _player;
         private Rigidbody2D _rb;
