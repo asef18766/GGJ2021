@@ -30,7 +30,13 @@ public class SceneController : MonoBehaviour
     public void ChangeLevelScene()
     {
         level++;
+        if (level>3)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("ending");
+            return;
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level"+ level.ToString());
+
     }
 
 
